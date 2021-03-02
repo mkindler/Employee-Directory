@@ -5,17 +5,18 @@ import API from "../utils/API";
 import "../styles/DataArea.css";
 import DataAreaContext from "../utils/DataAreaContext";
 
+// set up data from API (headshot, name, phone, email, DOB); set sorting options by ascending and descending
 const DataArea = () => {
   const [developerState, setDeveloperState] = useState({
     users: [],
-    order: "descend",
+    order: "ascend",
     filteredUsers: [],
     headings: [
-      { name: "Headshot", width: "10%", order: "descend" },
-      { name: "Name", width: "10%", order: "descend" },
-      { name: "Phone", width: "20%", order: "descend" },
-      { name: "Email", width: "20%", order: "descend" },
-      { name: "DOB", width: "10%", order: "descend" }
+      { name: "headshot", width: "10%", order: "ascend" },
+      { name: "name", width: "10%", order: "ascend" },
+      { name: "phone", width: "20%", order: "ascend" },
+      { name: "email", width: "20%", order: "ascend" },
+      { name: "dob", width: "10%", order: "ascend" }
     ]
   });
 
@@ -25,14 +26,14 @@ const DataArea = () => {
       .map(elem => elem.order)
       .toString();
 
-    if (currentOrder === "descend") {
-      currentOrder = "ascend";
-    } else {
+    if (currentOrder === "ascend") {
       currentOrder = "descend";
+    } else {
+      currentOrder = "ascend";
     }
 
     const compareFnc = (a, b) => {
-      if (currentOrder === "ascend") {
+      if (currentOrder === "descend") {
         if (a[heading] === undefined) {
           return 1;
         } else if (b[heading] === undefined) {
@@ -75,12 +76,13 @@ const DataArea = () => {
 
   const handleSearchChange = event => {
     const filter = event.target.value;
+    // eslint-disable-next-line array-callback-return
     const filteredList = developerState.users.filter(item => {
       let values = item.name.first.toLowerCase() + " " + item.name.last.toLowerCase();
-      console.log(filter, values)
-    if(values.indexOf(filter.toLowerCase()) !== -1){
-      return item
-    };
+
+    	if(values.indexOf(filter.toLowerCase()) !== -1){
+      	return item
+    	};
     });
 
     setDeveloperState({ ...developerState, filteredUsers: filteredList });
@@ -95,6 +97,8 @@ const DataArea = () => {
         filteredUsers: results.data.results
       });
     });
+	// empty array given as second argument to run the function given to useEffect AFTER initial render
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

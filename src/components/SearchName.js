@@ -2,25 +2,24 @@ import React, { useContext } from "react";
 import "../styles/SearchName.css";
 import DataAreaContext from "../utils/DataAreaContext";
 
+// create search form to filter by name
 const SearchName = () => {
   const context = useContext(DataAreaContext);
 
   return (
     <div className="search-box">
-      <div className="input-group">
-          <div className="input-group-prepend">
-            <span className="input-group-text" id="">
-              Search
-            </span>
-          </div>
-          <input
+      <form className="form-inline">
+        <input
           className="form-control mr-sm-2"
           type="search"
-          placeholder="name"
+          placeholder="Search by Name"
           aria-label="Search"
           onChange={e => context.handleSearchChange(e)}
         />
-        </div>
+        <button className="btn my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
     </div>
   );
 }

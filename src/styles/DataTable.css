@@ -10,6 +10,6 @@
 
 .data-table .col .pointer:hover:after {
   font-size: 80%;
-  content: "🔽";
+  content: " 🔽";
   margin-right: 0;
 }
