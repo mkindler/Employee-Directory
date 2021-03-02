@@ -61,8 +61,12 @@ Below are notes included when using Create React App that are helpful for unders
 - [Functional Components](https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd71080)
 - [Functional vs Class Components](https://www.twilio.com/blog/react-choose-functional-components)
 - [React Context API with Functional Component](https://javascript.plainenglish.io/how-to-use-react-context-api-with-functional-component-472f1d5e0851)
+- [useEffect Hook](https://blog.logrocket.com/guide-to-react-useeffect-hook/)
+- [Running useEffect](https://css-tricks.com/run-useeffect-only-once/)
+- [Sorting in React](https://www.smashingmagazine.com/2020/03/sortable-tables-react/)
 - [Random User Generator API](https://randomuser.me/)
 - [Create React App Deployment](https://create-react-app.dev/docs/deployment/)
+- [Deploying a React App to GitHub Pages](https://github.com/gitname/react-gh-pages)
 
 # Getting Started with Create React App
 
