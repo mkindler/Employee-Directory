@@ -1,6 +1,6 @@
 {
   "name": "emp-directory",
-  "homepage": "https://mkindler.github.io/emp-directory",
+  "homepage": "https://mkindler.github.io/Employee-Directory",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
